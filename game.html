@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🌼 Springtime Riddle Game 🌸</title>
+  <style>
+    body {
+      font-family: 'Trebuchet MS', sans-serif;
+      background: linear-gradient(to bottom right, #eafaf1, #fcefe3);
+      color: #4b6043;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+      margin: 0;
+      background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #7c9c66;
+      text-shadow: 1px 1px #ffffff;
+    }
+
+    .riddle-box {
+      background: #ffffffcc;
+      border: 3px solid #c8e6c9;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      max-width: 520px;
+      text-align: center;
+      backdrop-filter: blur(6px);
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      border: 2px solid #aed581;
+      border-radius: 10px;
+      width: 80%;
+      margin-top: 10px;
+      background-color: #f9fff4;
+    }
+
+    button {
+      background-color: #c5e1a5;
+      color: #355e3b;
+      border: none;
+      padding: 10px 20px;
+      margin: 10px 5px 0;
+      border-radius: 15px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #aed581;
+    }
+
+    .result {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .answer-reveal {
+      color: #6d4c41;
+      font-style: italic;
+      margin-top: 5px;
+    }
+
+    .flower {
+      font-size: 1.5rem;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌼 Springtime Riddle Game 🌸</h1>
+  <div class="riddle-box">
+    <div class="flower">🌷🌼🌸🌿</div>
+    <p id="riddle">Click "New Riddle" to start!</p>
+    <input type="text" id="answer" placeholder="Type your answer here..." />
+    <br />
+    <button onclick="checkAnswer()">Check Answer</button>
+    <button onclick="giveUp()">Give Up 😅</button>
+    <button onclick="newRiddle()">New Riddle</button>
+    <p class="result" id="result"></p>
+    <p class="answer-reveal" id="reveal"></p>
+    <div class="flower">🌼🍃🌸🌷</div>
+  </div>
+
+  <script>
+    const riddles = [
+      {
+        question: "I’m tall when I’m young, and I’m short when I’m old. What am I?",
+        answer: "candle"
+      },
+      {
+        question: "What has to be broken before you can use it?",
+        answer: "egg"
+      },
+      {
+        question: "I’m not alive, but I can grow. I don’t have lungs, but I need air. What am I?",
+        answer: "fire"
+      },
+      {
+        question: "The more of me you take, the more you leave behind. What am I?",
+        answer: "footsteps"
+      },
+      {
+        question: "I have keys but no locks. I have a space but no room. You can enter but can’t go outside. What am I?",
+        answer: "keyboard"
+      }
+    ];
+
+    let currentRiddle = {};
+
+    function newRiddle() {
+      const randomIndex = Math.floor(Math.random() * riddles.length);
+      currentRiddle = riddles[randomIndex];
+      document.getElementById("riddle").textContent = currentRiddle.question;
+      document.getElementById("answer").value = "";
+      document.getElementById("result").textContent = "";
+      document.getElementById("reveal").textContent = "";
+    }
+
+    function checkAnswer() {
+      const userAnswer = document.getElementById("answer").value.trim().toLowerCase();
+      if (userAnswer === currentRiddle.answer) {
+        document.getElementById("result").textContent = "🌸 Correct! You’re blooming with brilliance!";
+        document.getElementById("result").style.color = "#388e3c";
+        document.getElementById("reveal").textContent = "";
+      } else {
+        document.getElementById("result").textContent = "Not quite! Keep trying, little blossom!";
+        document.getElementById("result").style.color = "#d84315";
+      }
+    }
+
+    function giveUp() {
+      document.getElementById("reveal").textContent = `🌿 The answer was: "${currentRiddle.answer}"`;
+      document.getElementById("result").textContent = "It’s okay! Even the flowers take time to bloom 🌼";
+      document.getElementById("result").style.color = "#6d4c41";
+    }
+  </script>
+</body>
+</html>

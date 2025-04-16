@@ -1,0 +1,113 @@
+.common{
+    text-align: center;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+
+.header{
+    background-color: tan;
+    color: #eae3c9;
+    height: 100px;
+    line-height: 100px;
+}
+
+
+.mainbody{
+    background-color: #fafdf3;
+    color: tan;
+}
+
+
+.footer{
+    position: fixed;
+    background-color: tan;
+    color: #eae3c9;
+    bottom: 0px;
+    left: 5px;
+    right: 5px;
+    height: 25px;
+    line-height: 25px;
+}
+
+.footer a {
+    color: #eae3c9; 
+    text-decoration: none; 
+}
+
+
+img{
+    display: block;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+nav{
+    background-color: #eae3c9;
+    padding: 10px;
+    overflow: hidden;
+}
+
+
+nav a{
+    color: tan;
+    text-decoration: none;
+    padding: 20px;
+    font-weight: bold;
+}
+
+
+nav a:hover{
+    background-color: #f5f5dd;
+}
+
+ul > li {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 1em;
+}
+
+ul ol {
+    font-size: 1em;
+    font-weight: normal;
+    margin-top: 0.5em;
+    padding-left: 1.5em;
+}
+
+ol li {
+    margin-bottom: 0.3em;
+}
+
+ul, ol {
+    list-style-position: outside;
+    padding-left: 40px;
+    text-align: left;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.tableauPlaceholder {
+    display: flex;
+    justify-content: center;
+    margin: 30px auto;
+}
+
+.mainbody h2 {
+    text-align: center;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 0 0; 
+}
+
+.tableauPlaceholder {
+    margin-top: 0;
+    padding-top: 0;
+}
